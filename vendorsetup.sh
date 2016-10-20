@@ -1,5 +1,9 @@
 # Shebang is intentionally missing - do not run as a script
 
+# Function:
+# - aospremote:      Add git remote for matching AOSP repository.
+# - cafremote:       Add git remote for matching CodeAurora repository.
+
 # Override host metadata to make builds more reproducible and avoid leaking info
 export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
@@ -108,3 +112,51 @@ export SKIP_ABI_CHECKS=true
 # Some Qualcomm HALs in AOSP depend on this variable. Define it here to
 # avoid unnecessary repo forks.
 export QC_OPEN_PATH=vendor/qcom/opensource
+
+function aospremote()
+{
+    if ! git rev-parse --git-dir &> /dev/null
+    then
+        echo ".git directory not found. Please run this from the root directory of the Android repository you wish to set up."
+        return 1
+    fi
+    git remote rm aosp 2> /dev/null
+    local PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
+    # Google moved the repo location in Oreo
+    if [ $PROJECT = "build/make" ]
+    then
+        PROJECT="build"
+    fi
+    if (echo $PROJECT | grep -qv "^device")
+    then
+        local PFX="platform/"
+    fi
+    git remote add aosp https://android.googlesource.com/$PFX$PROJECT
+    echo "Remote 'aosp' created"
+}
+
+function cafremote()
+{
+    if ! git rev-parse --git-dir &> /dev/null
+    then
+        echo ".git directory not found. Please run this from the root directory of the Android repository you wish to set up."
+        return 1
+    fi
+    git remote rm caf 2> /dev/null
+    local PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
+     # Google moved the repo location in Oreo
+    if [ $PROJECT = "build/make" ]
+    then
+        PROJECT="build"
+    fi
+    if [[ $PROJECT =~ "qcom/opensource" ]];
+    then
+        PROJECT=$(echo $PROJECT | sed -e "s#qcom\/opensource#qcom-opensource#")
+    fi
+    if (echo $PROJECT | grep -qv "^device")
+    then
+        local PFX="platform/"
+    fi
+    git remote add caf https://source.codeaurora.org/quic/la/$PFX$PROJECT
+    echo "Remote 'caf' created"
+}
