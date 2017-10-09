@@ -30,6 +30,10 @@ else
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+# General additions
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.disable_rescue=true
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/bianca/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
