@@ -22,6 +22,7 @@ $(call inherit-product, vendor/bianca/overlay/overlay.mk)
 $(call inherit-product, vendor/bianca/telephony/telephony.mk)
 $(call inherit-product, vendor/bianca/audio/audio.mk)
 $(call inherit-product, vendor/bianca/backuptool/backuptool.mk)
+$(call inherit-product, vendor/bianca/charger/charger.mk)
 $(call inherit-product-if-exists, vendor/bianca/signing/dev.mk)
 
 # Flatten APEXs for performance
