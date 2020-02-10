@@ -15,6 +15,7 @@
 
 PRODUCT_BRAND := BiancaProject
 OTA_VERSION := 12.1
+BUILD_ID_LC ?= $(shell echo $(BUILD_ID) | tr '[:upper:]' '[:lower:]')
 
 # Official tag
 #ifeq ($(BIANCA_OFFICIAL), true)
@@ -36,3 +37,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.bianca.version=$(BIANCA_VERSION) \
   ro.bianca.ota.version=$(OTA_VERSION) \
   ro.build.version.custom=$(CUSTOM_ROM_VERSION)
+
+PRODUCT_HOST_PACKAGES += \
+    sign_target_files_apks \
+    ota_from_target_files

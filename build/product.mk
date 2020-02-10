@@ -22,6 +22,10 @@ $(call inherit-product, vendor/bianca/telephony/telephony.mk)
 $(call inherit-product, vendor/bianca/audio/audio.mk)
 $(call inherit-product-if-exists, vendor/bianca/signing/dev.mk)
 
+ifneq ($(wildcard certs/releasekey.*),)
+PROD_CERTS := certs
+endif
+
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
 # This needs to be specified explicitly to override ro.apex.updatable=true from
