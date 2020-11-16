@@ -59,6 +59,19 @@ PRODUCT_PACKAGES += \
     LineageRedAccent \
     LineageYellowAccent
 
+# Accent misc
+PRODUCT_PACKAGES += \
+    AccentColorAmberOverlay \
+    AccentColorBlueGreyOverlay \
+    AccentColorDeepOrangeOverlay \
+    AccentColorDeepPurpleOverlay \
+    AccentColorGreyOverlay \
+    AccentColorIndigoOverlay \
+    AccentColorLightBlueOverlay \
+    AccentColorLightGreenOverlay \
+    AccentColorLimeOverlay \
+    AccentColorTealOverlay
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
