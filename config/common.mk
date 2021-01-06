@@ -3,7 +3,7 @@
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
 PRODUCT_BRAND := BiancaProject
-VERSION := 1.0
+VERSION := 1.3
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -204,6 +204,7 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 LINEAGE_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILDTYPE)-$(LINEAGE_BUILD)-$(shell date +%d%m%Y-%H%M)
 LINEAGE_DISPLAY_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILDTYPE)-$(LINEAGE_BUILD)
+BIANCA_DISPLAY_VERSION := $(LINEAGE_DISPLAY_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
