@@ -13,14 +13,11 @@ endif
 
 # AOSP packages
 PRODUCT_PACKAGES += \
-    Email \
-    ExactCalculator \
-    Exchange2
+    ExactCalculator
 
 # Lineage packages
 PRODUCT_PACKAGES += \
     Backgrounds \
-    Eleven \
     Etar \
     Jelly \
     Profiles \
