@@ -136,10 +136,6 @@ TARGET_SCREEN_HEIGHT ?= 1920
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
-# AOSP packages
-PRODUCT_PACKAGES += \
-    Terminal
-
 # GamingMode
 PRODUCT_PACKAGES += \
     GamingMode
