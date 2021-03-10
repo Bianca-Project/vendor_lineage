@@ -3,7 +3,7 @@
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
 PRODUCT_BRAND := BiancaProject
-VERSION := 1.3
+VERSION := 1.3.1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
