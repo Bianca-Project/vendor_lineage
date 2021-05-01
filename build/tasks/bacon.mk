@@ -18,10 +18,10 @@
 
 BIANCA_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BIANCA_VERSION).zip
 
-MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
+SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: dudu
 dudu: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BIANCA_TARGET_PACKAGE)
-	$(hide) $(MD5) $(BIANCA_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BIANCA_TARGET_PACKAGE).md5sum
+	$(hide) $(SHA256) $(BIANCA_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BIANCA_TARGET_PACKAGE).sha256sum
 	@echo "Package Complete: $(BIANCA_TARGET_PACKAGE)" >&2
