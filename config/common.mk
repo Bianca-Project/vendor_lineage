@@ -140,9 +140,7 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in Lineage
 PRODUCT_PACKAGES += \
-    awk \
     bash \
-    bzip2 \
     curl \
     getcap \
     htop \
