@@ -31,3 +31,7 @@ PRODUCT_PACKAGES += \
 # Themes
 PRODUCT_PACKAGES += \
     DarkBgOverlay \
+
+# Navbar
+PRODUCT_PACKAGES += \
+    NavigationBarNoHintOverlay \
