@@ -199,6 +199,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bianca/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/bianca/overlay/common
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/bianca/config/device_framework_matrix.xml
+
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/bianca/build/target/product/security/lineage
 
