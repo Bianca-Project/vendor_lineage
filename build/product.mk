@@ -27,7 +27,11 @@ $(call inherit-product-if-exists, vendor/bianca/signing/dev.mk)
 # Inherit charger image styles
 TARGET_INCLUDE_PIXEL_CHARGER ?= true
 ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
-$(call inherit-product, vendor/bianca/charger/pixel/charger.mk)
+    $(call inherit-product, vendor/bianca/charger/pixel/charger.mk)
+endif
+
+ifeq ($(TARGET_INCLUDE_LINEAGE_CHARGER),true)
+    $(call inherit-product, vendor/bianca/charger/lineage/charger.mk)
 endif
 
 # Flatten APEXs for performance
