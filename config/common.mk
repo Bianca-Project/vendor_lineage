@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Terminal
 
+# GamingMode
+PRODUCT_PACKAGES += \
+    GamingMode
+
 # Lineage packages
 PRODUCT_PACKAGES += \
     LineageParts \
