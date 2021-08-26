@@ -41,7 +41,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     vendor/bianca/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/bianca/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bianca/prebuilt/common/bin/50-lineage.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh
+    vendor/bianca/prebuilt/common/bin/50-bianca.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bianca.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
