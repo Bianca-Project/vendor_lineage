@@ -2,17 +2,9 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-PRODUCT_BRAND := BiancaProject
-VERSION := 1.4
+include vendor/bianca/config/branding.mk
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
-# official tag
-ifeq ($(BIANCA_OFFICIAL), true)
-    BIANCA_BUILDTYPE := OFFICIAL
-else
-    BIANCA_BUILDTYPE := UNOFFICIAL
-endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -210,10 +202,6 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/bianca/build/target/product/security/lineage
 
 -include vendor/bianca-priv/keys/keys.mk
-
-LINEAGE_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILDTYPE)-$(LINEAGE_BUILD)-$(shell date +%d%m%Y-%H%M)
-LINEAGE_DISPLAY_VERSION := $(PRODUCT_BRAND)-v$(VERSION)-$(BIANCA_BUILDTYPE)-$(LINEAGE_BUILD)
-BIANCA_DISPLAY_VERSION := $(LINEAGE_DISPLAY_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/bianca/config/partner_gms.mk

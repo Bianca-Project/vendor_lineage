@@ -6,10 +6,11 @@ endif
 
 # BiancaProject System Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.bianca.version=$(LINEAGE_VERSION) \
+    ro.bianca.version=$(BIANCA_VERSION) \
+    ro.bianca.ota.version=$(OTA_VERSION) \
     ro.bianca.releasetype=$(BIANCA_BUILDTYPE) \
     ro.bianca.build.version=v$(VERSION) \
-    ro.modversion=$(LINEAGE_VERSION)
+    ro.modversion=$(BIANCA_VERSION)
 
 # LineageOS Platform Display Version
 ADDITIONAL_BUILD_PROPERTIES += \
