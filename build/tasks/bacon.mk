@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# BIANCA OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BIANCA_VERSION).zip
+BIANCA_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BIANCA_VERSION).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: dudu
 dudu: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
-	$(hide) $(MD5) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BIANCA_TARGET_PACKAGE)
+	$(hide) $(MD5) $(BIANCA_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BIANCA_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(BIANCA_TARGET_PACKAGE)" >&2

@@ -15,33 +15,33 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_arm.mk \
-    $(LOCAL_DIR)/lineage_arm64.mk \
-    $(LOCAL_DIR)/lineage_x86.mk \
-    $(LOCAL_DIR)/lineage_x86_64.mk \
-    $(LOCAL_DIR)/lineage_arm_ab.mk \
-    $(LOCAL_DIR)/lineage_arm64_ab.mk \
-    $(LOCAL_DIR)/lineage_x86_ab.mk \
-    $(LOCAL_DIR)/lineage_x86_64_ab.mk \
-    $(LOCAL_DIR)/lineage_tv_arm.mk \
-    $(LOCAL_DIR)/lineage_tv_arm64.mk \
-    $(LOCAL_DIR)/lineage_tv_x86.mk \
-    $(LOCAL_DIR)/lineage_tv_x86_64.mk \
-    $(LOCAL_DIR)/lineage_car_arm64.mk \
-    $(LOCAL_DIR)/lineage_car_x86_64.mk
+    $(LOCAL_DIR)/bianca_arm.mk \
+    $(LOCAL_DIR)/bianca_arm64.mk \
+    $(LOCAL_DIR)/bianca_x86.mk \
+    $(LOCAL_DIR)/bianca_x86_64.mk \
+    $(LOCAL_DIR)/bianca_arm_ab.mk \
+    $(LOCAL_DIR)/bianca_arm64_ab.mk \
+    $(LOCAL_DIR)/bianca_x86_ab.mk \
+    $(LOCAL_DIR)/bianca_x86_64_ab.mk \
+    $(LOCAL_DIR)/bianca_tv_arm.mk \
+    $(LOCAL_DIR)/bianca_tv_arm64.mk \
+    $(LOCAL_DIR)/bianca_tv_x86.mk \
+    $(LOCAL_DIR)/bianca_tv_x86_64.mk \
+    $(LOCAL_DIR)/bianca_car_arm64.mk \
+    $(LOCAL_DIR)/bianca_car_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_arm-userdebug \
-    lineage_arm64-userdebug \
-    lineage_x86-userdebug \
-    lineage_x86_64-userdebug \
-    lineage_arm_ab-userdebug \
-    lineage_arm64_ab-userdebug \
-    lineage_x86_ab-userdebug \
-    lineage_x86_64_ab-userdebug \
-    lineage_tv_arm-userdebug \
-    lineage_tv_arm64-userdebug \
-    lineage_tv_x86-userdebug \
-    lineage_tv_x86_64-userdebug \
-    lineage_car_arm64-userdebug \
-    lineage_car_x86_64-userdebug
+    bianca_arm-userdebug \
+    bianca_arm64-userdebug \
+    bianca_x86-userdebug \
+    bianca_x86_64-userdebug \
+    bianca_arm_ab-userdebug \
+    bianca_arm64_ab-userdebug \
+    bianca_x86_ab-userdebug \
+    bianca_x86_64_ab-userdebug \
+    bianca_tv_arm-userdebug \
+    bianca_tv_arm64-userdebug \
+    bianca_tv_x86-userdebug \
+    bianca_tv_x86_64-userdebug \
+    bianca_car_arm64-userdebug \
+    bianca_car_x86_64-userdebug
