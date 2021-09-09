@@ -25,6 +25,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
+# Gapps
+ifeq ($(WITH_GAPPS),true)
+    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+endif
+
 # General additions
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true
