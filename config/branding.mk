@@ -1,5 +1,5 @@
 PRODUCT_BRAND := BiancaProject
-VERSION := 1.4
+VERSION := 1.5
 OTA_VERSION := 11
 
 # Official tag
