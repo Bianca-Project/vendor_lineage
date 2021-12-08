@@ -22,4 +22,5 @@ PRODUCT_ENFORCE_RRO_TARGETS += framework-res
 PRODUCT_PACKAGES += \
     SettingsWallpaperLauncherOverlay
 
-
+# Lawnicons
+$(call inherit-product-if-exists, vendor/lawnicons/overlay.mk)
