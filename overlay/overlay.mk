@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Vendor overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/proton/overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/bianca/overlay
 
 # Framework overlay needs to be a RRO
 PRODUCT_ENFORCE_RRO_TARGETS += framework-res
