@@ -14,6 +14,7 @@
 
 # Inherit vendor submodules
 $(call inherit-product, vendor/bianca/apps/apps.mk)
+$(call inherit-product, vendor/bianca/config/branding.mk)
 $(call inherit-product, vendor/bianca/bootanimation/bootanimation.mk)
 $(call inherit-product, vendor/bianca/fonts/fonts.mk)
 $(call inherit-product, vendor/bianca/overlay/overlay.mk)
