@@ -18,5 +18,14 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/bianca/overlay
 # Framework overlay needs to be a RRO
 PRODUCT_ENFORCE_RRO_TARGETS += framework-res
 
+# Settings Wallpaper and style overlay
+ifeq ($(WITH_GMS),true)
+PRODUCT_PACKAGES += \
+    SettingsWallpaperNexusOverlay
+else
+PRODUCT_PACKAGES += \
+    SettingsWallpaperLauncherOverlay
+endif
+
 # Lawnicons
 $(call inherit-product-if-exists, vendor/lawnicons/overlay.mk)
