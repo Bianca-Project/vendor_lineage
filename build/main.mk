@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Custom ROM version
--include vendor/bianca/version.mk
-
 # Signing
 -include vendor/bianca/signing/keys.mk
 

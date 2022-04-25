@@ -1,4 +1,5 @@
 # Copyright (C) 2020 The Proton AOSP Project
+# Copyright (C) 2022 Bianca Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +13,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CUSTOM_ROM_VERSION := 12.3.0
+PRODUCT_BRAND := BiancaProject
+OTA_VERSION := 12.1
 
-ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.build.version.custom=$(CUSTOM_ROM_VERSION)
+# Official tag
+#ifeq ($(BIANCA_OFFICIAL), true)
+#    BIANCA_TYPE := -OFFICIAL
+#else
+#    BIANCA_TYPE := -UNOFFICIAL
+#endif
+
+# Custom name
+ifneq ($(BIANCA_CUSTOM_NAME),)
+    BIANCA_VERSION := $(PRODUCT_BRAND)-$(OTA_VERSION)-$(BIANCA_CUSTOM_NAME)-$(TARGET_PRODUCT)$(BIANCA_TYPE)-$(shell date +%Y%m%d-%H%M)
+    CUSTOM_ROM_VERSION := $(OTA_VERSION)-$(BIANCA_CUSTOM_NAME)$(BIANCA_TYPE)-$(shell date +%Y%m%d-%H%M)
+else
+    BIANCA_VERSION := $(PRODUCT_BRAND)-$(OTA_VERSION)-$(TARGET_PRODUCT)$(BIANCA_TYPE)-$(shell date +%Y%m%d-%H%M)
+    CUSTOM_ROM_VERSION := $(OTA_VERSION)$(BIANCA_TYPE)-$(shell date +%Y%m%d-%H%M)
+endif
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+  ro.bianca.version=$(BIANCA_VERSION) \
+  ro.bianca.ota.version=$(OTA_VERSION) \
+  ro.build.version.custom=$(CUSTOM_ROM_VERSION)
