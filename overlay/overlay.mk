@@ -19,7 +19,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/bianca/overlay
 PRODUCT_ENFORCE_RRO_TARGETS += framework-res
 
 # Settings Wallpaper and style overlay
-ifeq ($(WITH_GMS),true)
+ifneq (,$(wildcard vendor/gms/common/proprietary/system_ext/priv-app/WallpaperPickerGoogleRelease))
 PRODUCT_PACKAGES += \
     SettingsWallpaperNexusOverlay
 else
