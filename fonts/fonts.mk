@@ -26,6 +26,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     FontHKGroteskOverlay \
     FontManropeOverlay \
+    FontNothingDotOverlay \
     FontNotoSansOverlay \
     FontRecursiveCasualOverlay \
     FontRecursiveLinearOverlay \

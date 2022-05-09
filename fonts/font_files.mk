@@ -23,6 +23,8 @@ PRODUCT_PACKAGES += \
     DroidSansMono.ttf \
     Roboto-Regular.ttf \
     Manrope-VF.ttf \
+    ndot.ttf \
+    ndot57.ttf \
     NotoSans-Italic-VF.ttf \
     NotoSans-VF.ttf \
     Recursive-VF.ttf \
@@ -31,8 +33,8 @@ PRODUCT_PACKAGES += \
     RobotoStatic-Regular.ttf \
     SourceSans3-Italic-VF.otf \
     SourceSans3-VF.otf \
-    NotoSerif-BoldItalic.ttf \
     NotoSerif-Bold.ttf \
+    NotoSerif-BoldItalic.ttf \
     NotoSerif-Italic.ttf \
     NotoSerif-Regular.ttf \
 

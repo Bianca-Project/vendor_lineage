@@ -15,6 +15,7 @@ FONTS = {
     "Roboto": "roboto-system",
     "Source Sans": "source-sans",
     "Source Serif": "serif",
+    "Nothing Dot": "nothing",
 }
 
 # Android.bp
