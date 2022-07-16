@@ -160,3 +160,35 @@ function cafremote()
     git remote add caf https://source.codeaurora.org/quic/la/$PFX$PROJECT
     echo "Remote 'caf' created"
 }
+
+function get_prop_value() {
+    grep "$1" "$OUT/system/build.prop" | sed "s/$1=//"
+}
+
+function search() {
+    [ -z "$1" ] && echo -e "${ERROR}: provide a string to search${NC}" && return 1
+    find . -type f -print0 | xargs -0 -P "$(nproc --all)" grep "$*" && return 0
+}
+
+function reposync() {
+    repo sync -j"$(nproc --all)" --optimized-fetch --no-clone-bundle --no-tags --current-branch "$@"
+    return $?
+}
+
+function keygen() {
+    local certs_dir=${ANDROID_BUILD_TOP}/certs
+    [ -z "$1" ] || certs_dir=$1
+    rm -rf "$certs_dir"
+    mkdir -p "$certs_dir"
+    local subject
+    echo "Sample subject: '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'"
+    echo "Now enter subject details for your keys:"
+    for entry in C ST L O OU CN emailAddress; do
+        echo -n "$entry:"
+        read -r val
+        subject+="/$entry=$val"
+    done
+    for key in releasekey platform shared media networkstack testkey; do
+        ./development/tools/make_key "$certs_dir"/$key "$subject"
+    done
+}
