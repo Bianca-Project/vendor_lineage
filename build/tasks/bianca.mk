@@ -29,6 +29,12 @@ PROD_OTA_PACKAGE_TARGET := $(PRODUCT_OUT)/$(PROD_VERSION).zip
 
 $(PROD_OTA_PACKAGE_TARGET): KEY_CERT_PAIR := $(PROD_CERTS)/releasekey
 
+ifeq ($(TARGET_EXCLUDE_BACKUPTOOL),true)
+    $(PROD_OTA_PACKAGE_TARGET): backuptool := false
+else
+    $(PROD_OTA_PACKAGE_TARGET): backuptool := true
+endif
+
 $(PROD_OTA_PACKAGE_TARGET): $(BRO)
 
 $(PROD_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
@@ -38,6 +44,7 @@ $(PROD_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 	    --block \
 	    -p $(OUT_DIR)/host/linux-x86 \
 	    -k $(KEY_CERT_PAIR) \
+	    --backup=$(backuptool) \
 	    $(SIGNED_TARGET_FILES_PACKAGE) $@
 
 .PHONY: dudu-prod
