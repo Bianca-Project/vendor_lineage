@@ -47,6 +47,6 @@ $(PROD_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 	    --backup=$(backuptool) \
 	    $(SIGNED_TARGET_FILES_PACKAGE) $@
 
-.PHONY: dudu-prod
-dudu-prod: $(PROD_OTA_PACKAGE_TARGET)
+.PHONY: dudu-sign
+dudu-sign: $(PROD_OTA_PACKAGE_TARGET)
 endif
