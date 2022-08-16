@@ -49,10 +49,10 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Gamespace
-ifneq (,$(wildcard packages/apps/GameSpace))
-PRODUCT_PACKAGES += \
-    GameSpace
-endif
+#ifneq (,$(wildcard packages/apps/GameSpace))
+#PRODUCT_PACKAGES += \
+#    GameSpace
+#endif
 
 # Permissions for Google product apps
 PRODUCT_COPY_FILES += \
