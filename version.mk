@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_BRAND := BiancaProject
-OTA_VERSION := 12.1
+OTA_VERSION := 13.0
 BUILD_ID_LC ?= $(shell echo $(BUILD_ID) | tr '[:upper:]' '[:lower:]')
 
 # Official tag
