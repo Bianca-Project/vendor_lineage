@@ -52,7 +52,7 @@ endif
 ifneq ($(TARGET_KERNEL_CLANG_VERSION),)
     CLANG_PREBUILTS_VERSION := $(shell find $(BUILD_TOP)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/ -name AndroidVersion.txt -exec grep -l $(TARGET_KERNEL_CLANG_VERSION) "{}" \; | sed -e 's|/AndroidVersion.txt$$||g;s|^.*/||g')
 else
-    CLANG_PREBUILTS_VERSION := clang-r416183b1
+    CLANG_PREBUILTS_VERSION := clang-r450784d
 endif
 
 CLANG_PREBUILTS := $(BUILD_TOP)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/$(CLANG_PREBUILTS_VERSION)
