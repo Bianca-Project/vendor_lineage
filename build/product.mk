@@ -74,7 +74,6 @@ PRODUCT_PACKAGES += \
     htop \
     nano \
     pigz \
-    vim \
     zip \
     rsync \
 
