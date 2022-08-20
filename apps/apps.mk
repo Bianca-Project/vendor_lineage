@@ -60,7 +60,11 @@ PRODUCT_COPY_FILES += \
 
 # Google apps and services
 ifeq ($(WITH_GMS),true)
-$(call inherit-product, vendor/gms/products/*.mk)
+ifneq (,$(wildcard packages/gms/products))
+    $(call inherit-product, vendor/gms/products/*.mk)
+else
+    $(call inherit-product, vendor/gms/common/common-vendor.mk)
+endif
 
 # SetupWizard
 PRODUCT_PRODUCT_PROPERTIES += \
