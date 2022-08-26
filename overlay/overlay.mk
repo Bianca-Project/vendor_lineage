@@ -28,4 +28,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Lawnicons
-$(call inherit-product-if-exists, vendor/lawnicons/overlay.mk)
+ifneq (,$(wildcard vendor/lawnicons))
+PRODUCT_PACKAGE_OVERLAYS += vendor/lawnicons/overlay
+endif
+
