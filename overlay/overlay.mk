@@ -29,6 +29,7 @@ endif
 
 # Lawnicons
 ifneq (,$(wildcard vendor/lawnicons))
-PRODUCT_PACKAGE_OVERLAYS += vendor/lawnicons/overlay
+PRODUCT_PACKAGES += \
+    LauncherIcons
 endif
 
