@@ -8,7 +8,7 @@ dudu: otapackage
 	@echo -e "md5sum: `md5sum $(CUSTOM_ROM_TARGET_PACKAGE) | cut -d ' ' -f 1`"
 
 ifneq ($(PROD_CERTS),)
-PROD_VERSION := $(BIANCA_VERSION)-signed
+PROD_VERSION := $(BIANCA_VERSION)
 
 SIGNED_TARGET_FILES_PACKAGE := $(PRODUCT_OUT)/$(TARGET_DEVICE)-target_files-$(BUILD_ID_LC).zip
 SIGN_FROM_TARGET_FILES := $(HOST_OUT_EXECUTABLES)/sign_target_files_apks$(HOST_EXECUTABLE_SUFFIX)
