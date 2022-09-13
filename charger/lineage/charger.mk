@@ -17,4 +17,5 @@
 # LineageOS charger mode images
 PRODUCT_PACKAGES += \
     charger_res_images \
-    lineage_charger_animation
+    lineage_charger_animation \
+    lineage_charger_animation_vendor
