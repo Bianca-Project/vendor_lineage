@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------
 # Generate device tree image (dt.img)
 #----------------------------------------------------------------------
+ifeq ($(TARGET_KERNEL_INLINE),true)
 ifeq ($(strip $(BOARD_CUSTOM_BOOTIMG_MK)),)
 ifeq ($(strip $(BOARD_KERNEL_SEPARATED_DT)),true)
 INSTALLED_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img
@@ -61,5 +62,6 @@ ALL_MODULES.$(LOCAL_MODULE).INSTALLED += $(INSTALLED_DTIMAGE_TARGET)
 dtimage: $(INSTALLED_DTIMAGE_TARGET)
 
 
+endif
 endif
 endif

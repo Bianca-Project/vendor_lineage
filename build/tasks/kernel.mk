@@ -21,6 +21,7 @@
 #
 # These config vars are usually set in BoardConfig.mk:
 #
+#   TARGET_KERNEL_INLINE               = Set true if user using kernel source
 #   TARGET_KERNEL_CONFIG               = Kernel defconfig
 #   TARGET_KERNEL_VARIANT_CONFIG       = Variant defconfig, optional
 #   TARGET_KERNEL_SELINUX_CONFIG       = SELinux defconfig, optional
@@ -65,6 +66,7 @@
 #   TARGET_FORCE_PREBUILT_KERNEL       = Optional, use TARGET_PREBUILT_KERNEL even if
 #                                          kernel sources are present
 
+ifeq ($(TARGET_KERNEL_INLINE),true)
 ifneq ($(TARGET_NO_KERNEL),true)
 ifneq ($(TARGET_NO_KERNEL_OVERRIDE),true)
 
@@ -503,3 +505,4 @@ dtbimage: $(INSTALLED_DTBIMAGE_TARGET)
 
 endif # TARGET_NO_KERNEL_OVERRIDE
 endif # TARGET_NO_KERNEL
+endif # TARGET_KERNEL_INLINE
