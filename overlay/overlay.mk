@@ -19,13 +19,8 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/bianca/overlay
 PRODUCT_ENFORCE_RRO_TARGETS += framework-res
 
 # Settings Wallpaper and style overlay
-ifneq (,$(wildcard vendor/gms/common/proprietary/system_ext/priv-app/WallpaperPickerGoogleRelease))
-PRODUCT_PACKAGES += \
-    SettingsWallpaperNexusOverlay
-else
 PRODUCT_PACKAGES += \
     SettingsWallpaperLauncherOverlay
-endif
 
 # Lawnicons
 ifneq (,$(wildcard vendor/lawnicons))
