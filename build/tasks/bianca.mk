@@ -48,5 +48,5 @@ $(PROD_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 	    $(SIGNED_TARGET_FILES_PACKAGE) $@
 
 .PHONY: dudu-sign
-dudu-sign: $(PROD_OTA_PACKAGE_TARGET)
+dudu-sign: target-files-package otatools $(PROD_OTA_PACKAGE_TARGET)
 endif
