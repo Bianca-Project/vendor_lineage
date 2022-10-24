@@ -27,3 +27,7 @@ PRODUCT_PACKAGES += \
 # 2-button gesture navigation
 PRODUCT_PACKAGES += \
     NavigationBarMode2ButtonOverlay \
+
+# Themes
+PRODUCT_PACKAGES += \
+    DarkBgOverlay \
