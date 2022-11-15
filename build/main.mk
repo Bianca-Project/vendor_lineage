@@ -22,3 +22,6 @@ ifneq ($(PRODUCT_OVERRIDE_FINGERPRINT),)
 ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.build.stock_fingerprint=$(PRODUCT_OVERRIDE_FINGERPRINT)
 endif
+
+# Don't compile SystemUITests
+EXCLUDE_SYSTEMUI_TESTS := true
