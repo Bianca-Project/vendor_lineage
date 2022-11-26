@@ -18,6 +18,8 @@ LOCAL_PATH := vendor/bianca/apps
 
 # LineageOS apps
 PRODUCT_PACKAGES += \
+    DeskClock \
+    Etar \
     ExactCalculator \
     Jelly \
 
