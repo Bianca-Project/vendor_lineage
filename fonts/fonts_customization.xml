@@ -304,4 +304,9 @@
     <alias name="nothingdot-medium" to="nothingdot" weight="500" />
     <alias name="nothingdot-semi-bold" to="nothingdot" weight="600" />
     <alias name="nothingdot-bold" to="nothingdot" weight="700" />
+
+    <family customizationType="new-named-family" name="inter-regular-clock">
+        <font>Inter-Regular.ttf</font>
+    </family>
+
 </fonts-modification>
