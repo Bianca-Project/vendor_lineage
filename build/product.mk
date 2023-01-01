@@ -44,6 +44,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
+# Enable SystemUIDialog volume panel
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    sys.fflag.override.settings_volume_panel_in_systemui=true
+
 # AOSP userdebug/eng CLI tools
 PRODUCT_PACKAGES += \
     arping \
