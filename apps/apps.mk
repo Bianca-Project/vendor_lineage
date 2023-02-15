@@ -86,6 +86,3 @@ PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/gms_overlay
 
 endif
 
-# Sandboxed Google Play
-PRODUCT_PACKAGES += \
-    GmsCompat \
