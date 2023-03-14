@@ -15,7 +15,7 @@
 # Signing
 -include vendor/bianca/signing/keys.mk
 
-PRODUCT_OVERRIDE_FINGERPRINT ?= google/redfin/redfin:13/TQ1A.230205.002/9471150:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT ?= google/redfin/redfin:13/TQ2A.230305.008.C1/9619669:user/release-keys
 
 # Override fingerprint for Google Play Services and SafetyNet
 ifneq ($(PRODUCT_OVERRIDE_FINGERPRINT),)
