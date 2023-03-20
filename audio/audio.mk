@@ -82,8 +82,32 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/alarm_ringtones/plasma-mobile_wink.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/plasma-mobile_wink.ogg \
     $(LOCAL_PATH)/alarm_ringtones/plasma-mobile_wubstep.ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/plasma-mobile_wubstep.ogg \
 
-# Use Material product sounds by default
+
+# Microsoft Surface Duo 2
+SURFACE_ALARM_FILES := surface_boost surface_revive surface_twee
+SURFACE_NOTIFICATION_FILES := surface_bubble surface_chime surface_dot surface_focal surface_glimpse surface_ignite \
+    surface_pivotal surface_point surface_pop surface_reach
+SURFACE_RINGTONE_FILES := surface_lift surface_shimmer surface_shimmer_plus surface_verve
+SURFACE_UI_FILES := Effect_Tick KeypressReturn KeypressInvalid KeypressDelete KeypressSpacebar KeypressStandard \
+	camera_focus Dock Undock Lock Unlock Trusted ChargingStarted InCallNotification \
+	NFCFailure NFCInitiated NFCSuccess NFCTransferComplete NFCTransferInitiated \
+    camera_click VideoRecord WirelessChargingStarted LowBattery VideoStop
+
+PRODUCT_COPY_FILES += $(foreach fn,$(SURFACE_ALARM_FILES),\
+	$(LOCAL_PATH)/alarms/$(fn).ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/$(fn).ogg)
+
+PRODUCT_COPY_FILES += $(foreach fn,$(SURFACE_NOTIFICATION_FILES),\
+	$(LOCAL_PATH)/notifications/$(fn).ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/$(fn).ogg)
+
+PRODUCT_COPY_FILES += $(foreach fn,$(SURFACE_RINGTONE_FILES),\
+	$(LOCAL_PATH)/ringtones/$(fn).ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/$(fn).ogg)
+
+PRODUCT_COPY_FILES += $(foreach fn,$(SURFACE_UI_FILES),\
+	$(LOCAL_PATH)/ui/$(fn).ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui/$(fn).ogg)
+
+
+# Use Surface Duo 2 product sounds by default
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=material_minimal.ogg \
-    ro.config.alarm_alert=material_gentle.ogg \
-    ro.config.notification_sound=material_simple_1.ogg \
+    ro.config.ringtone=surface_shimmer.ogg \
+    ro.config.alarm_alert=surface_boost.ogg \
+    ro.config.notification_sound=surface_glimpse.ogg \
