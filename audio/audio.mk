@@ -13,7 +13,22 @@
 # limitations under the License.
 
 # Include Android 9 Material sounds instead of default AOSP ones
-$(call inherit-product, frameworks/base/data/sounds/AudioPackage14.mk)
+MATERIAL_P := frameworks/base/data/sounds
+
+ALARM_FILES := Argon Carbon Helium Krypton Neon Oxygen Osmium Platinum Timer
+NOTIFICATION_FILES := Ariel Ceres Carme Elara Europa Iapetus Io Rhea Salacia Titan Tethys
+RINGTONE_FILES := Atria Callisto Dione Ganymede Luna Oberon Phobos Pyxis Sedna Titania Triton \
+	Umbriel
+
+PRODUCT_COPY_FILES += $(foreach fn,$(ALARM_FILES),\
+	$(MATERIAL_P)/alarms/material/ogg/$(fn).ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/alarms/$(fn).ogg)
+
+PRODUCT_COPY_FILES += $(foreach fn,$(NOTIFICATION_FILES),\
+	$(MATERIAL_P)/notifications/material/ogg/$(fn).ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/notifications/$(fn).ogg)
+
+PRODUCT_COPY_FILES += $(foreach fn,$(RINGTONE_FILES),\
+	$(MATERIAL_P)/ringtones/material/ogg/$(fn).ogg:$(TARGET_COPY_OUT_PRODUCT)/media/audio/ringtones/$(fn).ogg)
+
 
 # 2019 Material product sounds (CC-BY 4.0)
 # Source:  https://material.io/design/sound/sound-resources.html
