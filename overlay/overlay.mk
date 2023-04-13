@@ -22,9 +22,4 @@ PRODUCT_ENFORCE_RRO_TARGETS += framework-res
 PRODUCT_PACKAGES += \
     SettingsWallpaperLauncherOverlay
 
-# Lawnicons
-ifneq (,$(wildcard vendor/lawnicons))
-PRODUCT_PACKAGES += \
-    LauncherIcons
-endif
 
