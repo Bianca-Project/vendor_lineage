@@ -1,11 +1,29 @@
-CUSTOM_ROM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BIANCA_VERSION).zip
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(BIANCA_VERSION).zip
+
+ifeq ($(TARGET_EXCLUDE_BACKUPTOOL),true)
+    $(CUSTOM_TARGET_PACKAGE): backuptool := false
+else
+    $(CUSTOM_TARGET_PACKAGE): backuptool := true
+endif
+
+$(CUSTOM_TARGET_PACKAGE): $(BRO)
+
+$(CUSTOM_TARGET_PACKAGE): $(BUILT_TARGET_FILES_PACKAGE) \
+		build/tools/releasetools/ota_from_target_files
+	@echo "bianca: $@"
+	    $(OTA_FROM_TARGET_FILES) --verbose \
+	    --block \
+	    -p $(OUT_DIR)/host/linux-x86 \
+	    --backup=$(backuptool) \
+	    $(BUILT_TARGET_FILES_PACKAGE) $@
+
+	@echo -e ""
+	@echo -e "zip: "$(CUSTOM_TARGET_PACKAGE)
+	@echo -e "size: `ls -lah $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 5`"
+	@echo -e "md5sum: `md5sum $(CUSTOM_TARGET_PACKAGE) | cut -d ' ' -f 1`"
 
 .PHONY: dudu
-dudu: otapackage
-	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_ROM_TARGET_PACKAGE)
-	@echo -e "zip: "$(CUSTOM_ROM_TARGET_PACKAGE)
-	@echo -e "size:`ls -lah $(CUSTOM_ROM_TARGET_PACKAGE) | cut -d ' ' -f 5`"
-	@echo -e "md5sum: `md5sum $(CUSTOM_ROM_TARGET_PACKAGE) | cut -d ' ' -f 1`"
+dudu: otatools checkvintf $(CUSTOM_TARGET_PACKAGE)
 
 ifneq ($(PROD_CERTS),)
 PROD_VERSION := $(BIANCA_VERSION)
