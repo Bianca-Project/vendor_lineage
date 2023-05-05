@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2020 The Proton AOSP Project
+    Copyright (C) 2020 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
+         http://www.apache.org/licenses/LICENSE-2.0
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,9 +15,8 @@
     limitations under the License.
 -->
 <resources>
-    <!-- SystemUI Plugins that can be loaded on user builds. -->
-    <string-array name="config_pluginAllowlist" translatable="false">
-        <item>com.android.systemui</item>
-        <item>com.android.systemui.plugin.globalactions.wallet</item>
-    </string-array>
+
+    <!-- Determines whether the shell features all run on another thread. This is to be overrided
+         by the resources of the app using the Shell library. -->
+    <bool name="config_enableShellMainThread">true</bool>
 </resources>
