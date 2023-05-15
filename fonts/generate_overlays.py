@@ -8,14 +8,6 @@ DEST_DIR = f"{os.path.dirname(os.path.realpath(__file__))}/overlays"
 
 # (user-facing name, font family name)
 FONTS = {
-    "Manrope": "manrope",
-    "Noto Sans": "noto-sans",
-    "Recursive Casual": "recursive-casual",
-    "Recursive Linear": "recursive",
-    "Roboto": "roboto-system",
-    "Source Sans": "source-sans",
-    "Source Serif": "serif",
-    "Nothing Dot": "nothing",
 }
 
 # Android.bp

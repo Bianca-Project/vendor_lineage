@@ -17,20 +17,3 @@ LOCAL_PATH := vendor/bianca/fonts
 # Copy font files
 include vendor/bianca/fonts/font_files.mk
 -include vendor/bianca/fonts/extra/extra.mk
-
-# Register custom fonts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml \
-
-# Overlays for UI font styles
-PRODUCT_PACKAGES += \
-    FontHKGroteskOverlay \
-    FontManropeOverlay \
-    FontNothingDotOverlay \
-    FontNotoSansOverlay \
-    FontRecursiveCasualOverlay \
-    FontRecursiveLinearOverlay \
-    FontRobotoOverlay \
-    FontSourceSansOverlay \
-    FontSourceSerifOverlay \
-    FontHarmonyOSSansOverlay \
