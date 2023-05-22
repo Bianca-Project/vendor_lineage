@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
 # Themes
 PRODUCT_PACKAGES += \
     DarkBgOverlay \
+    RoundQSOverlay \
 
 # Navbar
 PRODUCT_PACKAGES += \
