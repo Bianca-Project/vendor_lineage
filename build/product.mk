@@ -46,7 +46,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
+    Settings \
+    SystemUI \
+    Launcher3
 
 # AOSP userdebug/eng CLI tools
 PRODUCT_PACKAGES += \
