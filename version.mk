@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_BRAND := BiancaProject
-OTA_VERSION := 13.2
+OTA_VERSION := 13.3
 
 # Official tag
 #ifeq ($(BIANCA_OFFICIAL), true)
