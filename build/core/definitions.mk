@@ -7,6 +7,3 @@ endef
 
 # Include board/platform macros
 include vendor/bianca/build/core/utils.mk
-
-# Include vendor platform definitions
-include vendor/bianca/build/core/vendor/*.mk
