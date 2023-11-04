@@ -54,6 +54,8 @@ SOONG_CONFIG_biancaNvidiaVars += \
 SOONG_CONFIG_NAMESPACES += biancaQcomVars
 SOONG_CONFIG_biancaQcomVars += \
     legacy_hw_disk_encryption \
+    qti_vibrator_effect_lib \
+    qti_vibrator_use_effect_stream \
     should_wait_for_qsee \
     supports_extended_compress_format \
     supports_hw_fde \
@@ -82,6 +84,7 @@ SOONG_CONFIG_biancaGlobalVars_target_alternative_futex_waiters := $(TARGET_ALTER
 SOONG_CONFIG_biancaNvidiaVars_uses_nv_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 SOONG_CONFIG_biancaQcomVars_legacy_hw_disk_encryption := $(TARGET_LEGACY_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_biancaQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
+SOONG_CONFIG_biancaQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM)
 SOONG_CONFIG_biancaQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_biancaQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_biancaQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
@@ -97,6 +100,7 @@ TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE ?= false
 TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT ?= false
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY ?= 0
+TARGET_QTI_VIBRATOR_EFFECT_LIB ?= libqtivibratoreffect
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY ?= libcamera_parameters
 TARGET_SURFACEFLINGER_udfps_LIB ?= surfaceflinger_udfps_lib
 
@@ -115,3 +119,4 @@ SOONG_CONFIG_biancaQcomVars_qcom_display_headers_namespace := vendor/qcom/openso
 else
 SOONG_CONFIG_biancaQcomVars_qcom_display_headers_namespace := $(QCOM_SOONG_NAMESPACE)/display
 endif
+SOONG_CONFIG_biancaQcomVars_qti_vibrator_effect_lib := $(TARGET_QTI_VIBRATOR_EFFECT_LIB)
