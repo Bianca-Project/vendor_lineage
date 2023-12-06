@@ -13,11 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Charger mode images
-TARGET_INCLUDE_PIXEL_CHARGER ?= true
-ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
+# Pixel charger mode images
 PRODUCT_PACKAGES += \
     charger_res_images \
     product_charger_res_images \
     product_charger_res_images_vendor
-endif
