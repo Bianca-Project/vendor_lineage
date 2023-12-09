@@ -35,10 +35,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ProtonWallpaperStub \
 
-# Repainter integration
-PRODUCT_PACKAGES += \
-    RepainterServicePriv \
-
 # Face Unlock
 TARGET_FACE_UNLOCK_SUPPORTED ?= false
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
