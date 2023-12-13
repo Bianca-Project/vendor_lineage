@@ -42,7 +42,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI \
-    Launcher3
+    Launcher3Quickstep
 
 # AOSP userdebug/eng CLI tools
 PRODUCT_PACKAGES += \
