@@ -18,6 +18,7 @@ LOCAL_PATH := vendor/bianca/apps
 
 # LineageOS apps
 PRODUCT_PACKAGES += \
+    Aperture \
     DeskClock \
     Etar \
     ExactCalculator \
